@@ -4,19 +4,217 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MUPELA | High Fashion</title>
-  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Embedded Styling & Fonts -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-color: #FBF9F5;
+      --text-dark: #1A1817;
+      --text-muted: #6E6A66;
+      --accent-color: #C87D65;
+      --card-bg: #E8E2D9;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-dark);
+      background-color: var(--bg-color);
+      letter-spacing: 0.05em;
+    }
+
+    /* Announcement Bar */
+    .announcement-bar {
+      background: var(--text-dark);
+      color: var(--bg-color);
+      text-align: center;
+      padding: 10px 0;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      font-weight: 500;
+    }
+
+    .announcement-bar span {
+      color: var(--accent-color);
+      font-weight: 600;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 6%;
+      background: var(--bg-color);
+      border-bottom: 1px solid rgba(26, 24, 23, 0.08);
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin-right: 24px;
+      letter-spacing: 0.12em;
+      transition: color 0.2s ease;
+    }
+
+    .navbar a:hover {
+      color: var(--accent-color);
+    }
+
+    .brand-logo h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 85vh;
+      background: linear-gradient(rgba(26, 24, 23, 0.35), rgba(26, 24, 23, 0.35)), 
+                  url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #FFFFFF;
+      padding: 0 20px;
+    }
+
+    .hero-content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-content p {
+      font-size: 0.9rem;
+      margin-bottom: 28px;
+      letter-spacing: 0.15em;
+      font-weight: 300;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 36px;
+      background: var(--text-dark);
+      color: var(--bg-color);
+      text-decoration: none;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      font-weight: 500;
+      border: 1px solid var(--text-dark);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: transparent;
+      color: #FFFFFF;
+      border-color: #FFFFFF;
+    }
+
+    /* Product Grid */
+    .products {
+      padding: 100px 6%;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 50px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+
+    .product-card {
+      text-align: left;
+    }
+
+    .product-image-wrap {
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      background-color: var(--card-bg);
+    }
+
+    .product-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .product-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .product-card h4 {
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 6px;
+      letter-spacing: 0.08em;
+    }
+
+    .price {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+    footer {
+      padding: 60px 6%;
+      background: #121110;
+      color: var(--bg-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+    }
+
+    footer a {
+      color: var(--bg-color);
+      text-decoration: none;
+      margin-left: 20px;
+    }
+  </style>
 </head>
 <body>
 
+  <!-- Announcement Bar -->
   <div class="announcement-bar">
-    <p>COMPLIMENTARY SHIPPING ON ORDERS OVER $150</p>
+    <p>COMPLIMENTARY INTERNATIONAL SHIPPING ON ORDERS OVER <span>$150</span></p>
   </div>
 
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-links">
       <a href="#new">NEW ARRIVALS</a>
       <a href="#collections">COLLECTIONS</a>
-      <a href="#about">THE HOUSE</a>
+      <a href="#house">THE HOUSE</a>
     </div>
     <div class="brand-logo">
       <h1>MUPELA</h1>
@@ -27,42 +225,57 @@
     </div>
   </nav>
 
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <h2>AUTUMN / WINTER '26</h2>
-      <p>Clean silhouettes. Bold confidence.</p>
-      <a href="#shop" class="btn">EXPLORE THE COLLECTION</a>
+      <p>TAILORED PRECISION. BOLD CONFIDENCE.</p>
+      <a href="#shop" class="btn">EXPLORE COLLECTION</a>
     </div>
   </section>
 
+  <!-- Curated Collection -->
   <section class="products" id="shop">
-    <h3 class="section-title">CURATED PIECES</h3>
+    <div class="section-header">
+      <h3 class="section-title">Curated Selection</h3>
+    </div>
+
     <div class="product-grid">
       
       <div class="product-card">
-        <div class="product-image placeholder-1"></div>
+        <div class="product-image-wrap">
+          <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800&auto=format&fit=crop" alt="Structured Blazer">
+        </div>
         <h4>THE STRUCTURED BLAZER</h4>
         <p class="price">$380</p>
       </div>
 
       <div class="product-card">
-        <div class="product-image placeholder-2"></div>
-        <h4>TAILORED TROUSER</h4>
-        <p class="price">$260</p>
+        <div class="product-image-wrap">
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop" alt="Statement Set">
+        </div>
+        <h4>STATEMENT TWO-PIECE</h4>
+        <p class="price">$420</p>
       </div>
 
       <div class="product-card">
-        <div class="product-image placeholder-3"></div>
-        <h4>SILK STATEMENT DRESS</h4>
-        <p class="price">$450</p>
+        <div class="product-image-wrap">
+          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=800&auto=format&fit=crop" alt="Tailored Trench">
+        </div>
+        <h4>EDITORIAL TAILORED TRENCH</h4>
+        <p class="price">$510</p>
       </div>
 
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <div class="footer-content">
-      <p>&copy; 2026 MUPELA. ALL RIGHTS RESERVED.</p>
+    <p>&copy; 2026 MUPELA. ALL RIGHTS RESERVED.</p>
+    <div>
+      <a href="#">INSTAGRAM</a>
+      <a href="#">PRIVACY</a>
+      <a href="#">TERMS</a>
     </div>
   </footer>
 
